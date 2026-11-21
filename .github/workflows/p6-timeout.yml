@@ -1,0 +1,12 @@
+name: p6-timeout
+on:
+  push:
+    paths: ["p6-timeout/**", ".github/workflows/p6-timeout.yml"]
+  workflow_dispatch:
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - uses: actions/checkout@v4
+      - run: sh p6-timeout/job.sh

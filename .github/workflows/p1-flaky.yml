@@ -1,0 +1,14 @@
+name: p1-flaky
+on:
+  push:
+    paths: ["p1-flaky/**", ".github/workflows/p1-flaky.yml"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node p1-flaky/test.js

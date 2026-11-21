@@ -1,0 +1,11 @@
+name: p2-missing-action
+on:
+  push:
+    paths: [".github/workflows/p2-missing-action.yml"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v9.9.9
+      - run: echo "never reached"
