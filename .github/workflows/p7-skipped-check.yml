@@ -1,7 +1,7 @@
 name: p7-skipped-check
 on:
   pull_request:
-    paths: ["source/**"]      # the code lives in src/, so this check never runs on a change of the code
+    paths: ["src/**"]
   workflow_dispatch:
 jobs:
   test:

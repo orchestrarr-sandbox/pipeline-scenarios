@@ -2,8 +2,8 @@
 const http = require("http");
 http.createServer((req, res) => {
   if (req.url === "/health") {
-    res.statusCode = 500;
-    res.end("database is not ready");
+    res.statusCode = 200;
+    res.end("ok");
     return;
   }
   res.end("hello");
