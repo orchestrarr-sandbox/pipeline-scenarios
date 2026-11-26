@@ -1,9 +1,9 @@
-// The "deployed" application: it starts and answers, and its health check passes
+// The "deployed" application: it starts and answers, but its health check is wrong
 const http = require("http");
 http.createServer((req, res) => {
   if (req.url === "/health") {
-    res.statusCode = 200;
-    res.end("ok");
+    res.statusCode = 500;
+    res.end("database is not ready");
     return;
   }
   res.end("hello");
