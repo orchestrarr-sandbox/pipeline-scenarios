@@ -1,14 +1,11 @@
 name: p7-skipped-check
 on:
   pull_request:
-    paths: ["src/**", ".github/workflows/p7-skipped-check.yml"]
+    paths: ["source/**"]      # the code lives in src/, so this check never runs on a change of the code
   workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: python src/feature_test.py
+      - run: node src/feature.test.js

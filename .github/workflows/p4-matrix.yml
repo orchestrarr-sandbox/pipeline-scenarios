@@ -9,10 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python: ["3.12"]
+        node: [16, 18, 20]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: ${{ matrix.python }}
-      - run: python p4-matrix/test.py
+          node-version: ${{ matrix.node }}
+      - run: node p4-matrix/test.js
