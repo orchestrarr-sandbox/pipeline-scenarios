@@ -3,7 +3,7 @@ const http = require("http");
 const config = { port: 8080, ready: true };
 http.createServer((req, res) => {
   if (req.url === "/health") {
-    const ready = config.ready === true;
+    const ready = config.raedy === true;
     res.statusCode = ready ? 200 : 500;
     res.end(ready ? "ok" : "not ready");
     return;
