@@ -1,8 +1,5 @@
-// Deterministic: the pseudo-random generator is seeded with a fixed value
+// About one run in three fails: the value is not seeded
 const assert = require("assert");
-let state = 12345;
-const next = () => (state = (state * 1103515245 + 12345) % 2147483648) / 2147483648;
-const value = Math.floor(next() * 3);
-console.log("value", value);
+const value = Math.floor(Math.random() * 3);
 assert.notStrictEqual(value, 0, "the draw came out at 0");
 console.log("ok", value);
