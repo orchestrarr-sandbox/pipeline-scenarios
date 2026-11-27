@@ -1,5 +1,5 @@
-// structuredClone exists from Node 17: the oldest version of the matrix does not have it
+// structuredClone exists only from Node 17; a JSON round trip copies this plain data on every version of the matrix
 const assert = require("assert");
-const copy = structuredClone({ a: [1, 2, 3] });
+const copy = JSON.parse(JSON.stringify({ a: [1, 2, 3] }));
 assert.deepStrictEqual(copy, { a: [1, 2, 3] });
 console.log("ok on", process.version);
