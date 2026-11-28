@@ -1,5 +1,5 @@
 #!/bin/sh
-# waits for a file that nothing ever creates
+# nothing creates the awaited file, so do not wait for it
 echo "waiting for the cache to warm up"
-sleep 300
+sleep 1
 echo "done"
